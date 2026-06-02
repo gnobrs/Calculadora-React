@@ -5,8 +5,6 @@ import { useState } from "react";
 
 const App = () => {
   const [currentDisplay, setCurrentDisplay] = useState("0");
-  // const [firstNumber, setFirstNumber] = useState("0");
-  // const [operation, setOperation] = useState("");
 
   const handleAddToDisplay = (text) => {
     setCurrentDisplay((prev) => `${prev === "0" ? "" : prev}${text}`);
@@ -14,47 +12,9 @@ const App = () => {
 
   const handleClear = () => {
     setCurrentDisplay("0");
-    // setFirstNumber("0");
-    // setOperation("");
   };
 
-  // const handleSum = () => {
-  //   if (firstNumber === "0") {
-  //     setFirstNumber(String(currentNumber));
-  //     setCurrentNumber("0");
-  //     setOperation("+");
-  //   } else {
-  //     const sum = Number(firstNumber) + Number(currentNumber);
-  //     setCurrentNumber(String(sum));
-  //     setFirstNumber("0");
-  //   }
-  // };
-
-  // const handleMinus = () => {
-  //   if (firstNumber === "0") {
-  //     setFirstNumber(String(currentNumber));
-  //     setCurrentNumber("0");
-  //     setOperation("-");
-  //   } else {
-  //     const red = Number(firstNumber) - Number(currentNumber);
-  //     setCurrentNumber(String(red));
-  //     setFirstNumber("0");
-  //   }
-  // };
-
   const handleEquals = () => {
-    // if (firstNumber !== "0" && operation !== "" && currentDisplay !== "0") {
-    //   switch (operation) {
-    //     case "+":
-    //       handleSum();
-    //       break;
-    //     case "-":
-    //       handleMinus();
-    //       break;
-    //     default:
-    //       break;
-    //   }
-    // }
     const regex = /\d+(?:\.\d+)?|[+\-x/]/g;
 
     let tokens = currentDisplay.match(regex) || [];
